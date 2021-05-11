@@ -231,3 +231,9 @@ Kiểm tra và kết nối bằng beeline với port 10000 và GUI 10002
 beeline
 beeline> !connect jdbc:hive2://127.0.0.1:10000/default hive hive;
 ```
+
+### 3. Tham khảo
+
+- https://docs.cloudera.com/HDPDocuments/HDP2/HDP-2.6.3/bk_command-line-installation/content/validate_installation.html
+- https://phoenixnap.com/kb/install-hive-on-ubuntu
+- https://stackoverflow.com/a/50753233
