@@ -46,7 +46,7 @@ Thêm nội dung sau vào file
 ...
 export JAVA_HOME=/opt/softs/jdk1.8.0_112
 export HIVE_HOME=/opt/softs/hive
-export HIVE_DIR_CONF=$HIVE_HOME/conf
+export HIVE_DIR_CONF=$HIVEive_HOME/conf
 
 export HADOOP_HOME=/opt/softs/hadoop
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
@@ -56,7 +56,6 @@ export PATH=$HIVE_HOME/bin:$JAVA_HOME/bin:$PATH
 ```
 
 Lưu lại và thực thi lệnh để khai báo các biến
-
 
 ```
 source ~/.bashrc
@@ -154,6 +153,10 @@ cp /tmp/mysql-connector-java-*/mysql-connector-java-*.jar $HIVE_HOME/lib/
     		<name>hive.metastore.schema.verification</name>
     		<value>true</value>
 	</property>
+	<property>
+  		<name>hive.server2.enable.doAs</name>
+  		<value>false</value> 
+  	</property>
 </configuration>
 ```
 
@@ -161,4 +164,70 @@ cp /tmp/mysql-connector-java-*/mysql-connector-java-*.jar $HIVE_HOME/lib/
 
 ```
 schematool -initSchema -dbType mysql
+```
+
+Chờ cho hive khởi tạo xong schema trên MySQL; thông báo thành công.
+
+```
+Initialization script completed
+schemaTool completed
+```
+
+#### Lỗi không tương thích thư viện guava giữa Hadoop và Hive
+
+Nếu thông báo sau xuất hiện:
+
+```
+“Exception in thread “main” java.lang.NoSuchMethodError: com.google.common.base.Preconditions.checkArgument(ZLjava/lang/String;Ljava/lang/Object;)V”
+```
+
+Ta kiểm tra thông tin thư viện giữa Hadoop và Hive
+
+```
+ls $HADOOP_HOME/lib/guava*
+ls $HIVE_HME/lib/guava*
+```
+
+Thực hiện xóa thư viện cũ HIVE_HOME và đưa thư viện tương thích vào HIVE
+
+```
+rm -rf $HIVE_HME/lib/guava*
+cp $HADOOP_HOME/lib/guava* $HIVE_HME/lib/
+```
+
+Sau đó khởi tạo lại DB với lệnh:
+
+```
+schematool -initSchema -dbType mysql
+```
+
+### 3. Khởi động HIVE và kiểm tra
+
+#### Kiểm tra bằng câu lệnh hive
+
+```
+su - hive
+hive
+```
+
+Kiểm tra các DB hiện có trong HIVE:
+
+```
+hive> show databases;
+OK
+default
+```
+
+#### Khởi động hiveserver2
+
+```
+mkdir $HIVE_HOME/log -p 
+nohup $HIVE_HOME/bin/hiveserver2 > $HIVE_HOME/log/hiveserver2.out 2> $HIVE_HOME/log/hiveserver2.log &
+```
+
+Kiểm tra và kết nối bằng beeline với port 10000 và GUI 10002
+
+```
+beeline
+beeline> !connect jdbc:hive2://127.0.0.1:10000/default hive hive;
 ```
