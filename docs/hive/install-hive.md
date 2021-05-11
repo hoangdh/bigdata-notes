@@ -46,7 +46,7 @@ Thêm nội dung sau vào file
 ...
 export JAVA_HOME=/opt/softs/jdk1.8.0_112
 export HIVE_HOME=/opt/softs/hive
-export HIVE_DIR_CONF=$HIVEive_HOME/conf
+export HIVE_DIR_CONF=$HIVE_HOME/conf
 
 export HADOOP_HOME=/opt/softs/hadoop
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
@@ -161,6 +161,8 @@ cp /tmp/mysql-connector-java-*/mysql-connector-java-*.jar $HIVE_HOME/lib/
 </configuration>
 ```
 
+**Lưu ý:** Thay thế thông tin phù hợp với môi trường hiện tại như thông tin MySQL, các folder /tmp,...
+
 - Thiết lập khởi tạo Schema cho Hive
 
 ```
@@ -189,10 +191,10 @@ ls $HADOOP_HOME/lib/guava*
 ls $HIVE_HME/lib/guava*
 ```
 
-Thực hiện xóa thư viện cũ HIVE_HOME và đưa thư viện tương thích vào HIVE
+Thực hiện xóa thư viện cũ và đưa thư viện tương thích vào HIVE_HOME
 
 ```
-rm -rf $HIVE_HME/lib/guava*
+rm -rf $HIVE_HOME/lib/guava*
 cp $HADOOP_HOME/lib/guava* $HIVE_HME/lib/
 ```
 
