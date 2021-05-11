@@ -101,6 +101,7 @@ cp /tmp/mysql-connector-java-*/mysql-connector-java-*.jar $HIVE_HOME/lib/
 - Tạo file cấu hình `hive-site.xml` với nội dung như sau:
 
 > su - hive
+
 > vi $HIVE_HOME/conf/hive-site.xml
 
 ```
