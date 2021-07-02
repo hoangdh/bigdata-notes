@@ -16,7 +16,7 @@ mkdir -p /opt/softs/
 https://downloads.apache.org/hive
 ```
 
-Chúng ta tải về bản 3.1.2 - mới nhất trong thời điểm viết bài.
+Chúng ta tải về bản 3.1.2 - mới nhất tại thời điểm viết bài.
 
 ```
 cd /opt/softs/
@@ -52,7 +52,7 @@ export HADOOP_HOME=/opt/softs/hadoop
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export YARN_CONF_DIR=$HADOOP_HOME/etc/hadoop
 
-export PATH=$HIVE_HOME/bin:$JAVA_HOME/bin:$PATH
+export PATH=$HIVE_HOME/bin:$JAVA_HOME/bin:$HADOOP/bin:$PATH
 ```
 
 Lưu lại và thực thi lệnh để khai báo các biến
@@ -81,7 +81,7 @@ Cài đặt MySQL theo [hướng dẫn](https://github.com/hoangdh/ghichep-datab
 ```
 CREATE DATABASE hive_metastore CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 GRANT ALL ON hive_metastore.* TO hive@'%' IDENTIFIED BY 'Pa$$w0rdV3ry$trong';
-FLUSH PRIVILEGES:
+FLUSH PRIVILEGES;
 ```
 
 - Cài đặt Driver JDBC
@@ -188,7 +188,7 @@ Ta kiểm tra thông tin thư viện giữa Hadoop và Hive
 
 ```
 ls $HADOOP_HOME/lib/guava*
-ls $HIVE_HME/lib/guava*
+ls $HIVE_HOME/lib/guava*
 ```
 
 Thực hiện xóa thư viện cũ và đưa thư viện tương thích vào HIVE_HOME
