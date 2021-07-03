@@ -235,7 +235,7 @@ beeline
 beeline> !connect jdbc:hive2://127.0.0.1:10000/default hive hive;
 ```
 
-### 3. Cấu hình High Availiable cho HiveServer2
+### 3. Cấu hình High Available cho HiveServer2
 
 #### 3.1 Cài đặt Zookeeper Cluster
 #### 3.2 Cấu hình Hive
