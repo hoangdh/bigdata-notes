@@ -240,7 +240,7 @@ beeline> !connect jdbc:hive2://127.0.0.1:10000/default hive hive;
 #### 3.1 Cài đặt Zookeeper Cluster
 #### 3.2 Cấu hình Hive
 
-Thêm cấu hình HA vào `hbase-site.xml`
+Chúng ta cài thêm một máy chủ Hive mới theo các bước bên trên và thêm cấu hình High Available cho Hiveserver2 với ZooKeeper vào `hbase-site.xml`
 
 ```
 <configuration>
