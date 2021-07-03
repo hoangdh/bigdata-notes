@@ -235,8 +235,64 @@ beeline
 beeline> !connect jdbc:hive2://127.0.0.1:10000/default hive hive;
 ```
 
-### 3. Tham khảo
+### 3. Cấu hình High Availiable cho HiveServer2
+
+#### 3.1 Cài đặt Zookeeper Cluster
+#### 3.2 Cấu hình Hive
+
+Thêm cấu hình HA vào `hbase-site.xml`
+
+```
+<configuration>
+	...
+	<!-- HA with Zookeeper -->
+	<property>
+                <name>hive.server2.support.dynamic.service.discovery</name>
+                <value>true</value>
+        </property>
+        <property>
+                <name>hive.zookeeper.quorum</name>
+                <value>zk1,zk2,zk3:2181</value>
+	</property>
+	<property>
+                <name>hive.zookeeper.session.timeout</name>
+                <value>3000</value>
+        </property>
+        <property>
+		<name>hive.server2.zookeeper.namespace</name>
+		<value>hiveserver2</value>
+        </property>
+	<property>
+        	<name>hive.server2.enable.doAs</name>
+        	<value>false</value>
+	</property>
+</configuration>
+```
+**Chú ý**: Thay thế thông tin cụm ZooKeeper của bạn vào `zk1,zk2,zk3:2181`
+
+Khởi động lại `hiveserver2` trên các server
+
+```
+pkill -f -9 hiveserver2
+
+mkdir $HIVE_HOME/log -p 
+nohup $HIVE_HOME/bin/hiveserver2 > $HIVE_HOME/log/hiveserver2.out 2> $HIVE_HOME/log/hiveserver2.log &
+```
+
+#### 3.4 Kiểm tra kết nối
+
+```
+beeline
+beeline> !connect jdbc:hive2://zk1,zk2,zk3:2181/;serviceDiscoveryMode=zooKeeper;zooKeeperNamespace=hiveserver2 hive hive
+```
+
+
+### 4. Tham khảo
 
 - https://docs.cloudera.com/HDPDocuments/HDP2/HDP-2.6.3/bk_command-line-installation/content/validate_installation.html
 - https://phoenixnap.com/kb/install-hive-on-ubuntu
 - https://stackoverflow.com/a/50753233
+- HA: 
+  - https://www.ibm.com/docs/en/db2-big-sql/5.0.1?topic=availability-enabling-hiveserver2-high
+  - https://docs.cloudera.com/HDPDocuments/HDP2/HDP-2.3.0/bk_hadoop-ha/content/ha-hs2-rolling-upgrade.html
+  - https://community.cloudera.com/t5/Support-Questions/How-to-Enable-Zookeeper-Discovery-for-HiveServer2-HA/td-p/95392
