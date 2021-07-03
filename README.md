@@ -7,4 +7,4 @@ Vài ghi chép về các công nghệ trong Bigdata
 
 ### Hive
 
-- [Cài đặt Hive](docs/hive/install-hive-HA-with-ZooKeeper.md)
+- [Cài đặt Hive + Hiveserver2 HA](docs/hive/install-hive-HA-with-ZooKeeper.md)
