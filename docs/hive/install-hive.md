@@ -262,10 +262,6 @@ Thêm cấu hình HA vào `hbase-site.xml`
 		<name>hive.server2.zookeeper.namespace</name>
 		<value>hiveserver2</value>
         </property>
-	<property>
-        	<name>hive.server2.enable.doAs</name>
-        	<value>false</value>
-	</property>
 </configuration>
 ```
 **Chú ý**: Thay thế thông tin cụm ZooKeeper của bạn vào `zk1,zk2,zk3:2181`
