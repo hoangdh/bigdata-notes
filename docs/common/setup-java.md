@@ -1,4 +1,4 @@
-## Hướng dẫn cài đặt Java - Oracale JDK 1.8
+## Hướng dẫn cài đặt Java - Oracle JDK 1.8
 
 ### 1. Tải gói jdk
 
