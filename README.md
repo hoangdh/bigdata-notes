@@ -1,5 +1,5 @@
 # bigdata-notes
-Vài ghi chép về các công nghệ trong Bigdata
+Vài ghi chép sơ sài về các công nghệ trong Bigdata
 
 ### HBase
 
