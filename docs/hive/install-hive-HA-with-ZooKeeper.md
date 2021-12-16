@@ -235,10 +235,10 @@ beeline
 beeline> !connect jdbc:hive2://127.0.0.1:10000/default hive hive;
 ```
 
-### 3. Cấu hình High Available cho HiveServer2
+### 4. Cấu hình High Available cho HiveServer2
 
-#### 3.1 Cài đặt Zookeeper Cluster
-#### 3.2 Cấu hình Hive
+#### 4.1 Cài đặt Zookeeper Cluster
+#### 4.2 Cấu hình Hive
 
 Chúng ta cài thêm một máy chủ Hive mới theo các bước bên trên và thêm cấu hình High Available cho Hiveserver2 với ZooKeeper vào `hbase-site.xml`
 
@@ -275,7 +275,7 @@ mkdir $HIVE_HOME/log -p
 nohup $HIVE_HOME/bin/hiveserver2 > $HIVE_HOME/log/hiveserver2.out 2> $HIVE_HOME/log/hiveserver2.log &
 ```
 
-#### 3.4 Kiểm tra kết nối
+#### 4.4 Kiểm tra kết nối
 
 ```
 beeline
@@ -283,7 +283,7 @@ beeline> !connect jdbc:hive2://zk1,zk2,zk3:2181/;serviceDiscoveryMode=zooKeeper;
 ```
 
 
-### 4. Tham khảo
+### 5. Tham khảo
 
 - https://docs.cloudera.com/HDPDocuments/HDP2/HDP-2.6.3/bk_command-line-installation/content/validate_installation.html
 - https://phoenixnap.com/kb/install-hive-on-ubuntu
