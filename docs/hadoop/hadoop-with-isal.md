@@ -12,6 +12,8 @@
 
 ### 1.4 Cài đặt Protobuf
 
+Hadoop vẫn chỉ hỗ trợ phiên bản Protobuf 2.5.0.
+
 ```
 wget https://github.com/protocolbuffers/protobuf/releases/download/v2.5.0/protobuf-2.5.0.tar.gz                   
 tar -xvzf protobuf-2.5.0.tar  
@@ -34,6 +36,19 @@ cp bin/libisal.so bin/libisal.so.2 /lib64
 
 ### 2.1 Tải Hadoop
 
-### 2.2 Biên dịch
+```
+wget https://archive.apache.org/dist/hadoop/common/hadoop-3.2.1/hadoop-3.2.1-src.tar.gz -P /opt
+```
 
-> mvn clean package -Pdist,native -DskipTests -Dtar -Disal.lib=/lib64/ -Dbundle.isal=true
+### 2.2 Biên dịch với ISA-L
+
+```
+cd /opt
+tar -xzf hadoop-3.2.1-src.tar.gz
+cd hadoop-3.2.1-src/
+mvn clean package -Pdist,native -DskipTests -Dtar -Disal.lib=/lib64/ -Dbundle.isal=true
+```
+
+### 3. Tham khảo:
+- https://www.ercoppa.org/posts/how-to-compile-apache-hadoop-on-ubuntu-linux.html
+- https://blog.csdn.net/sinat_28603977/article/details/105536003
