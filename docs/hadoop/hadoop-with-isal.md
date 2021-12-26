@@ -49,6 +49,24 @@ cd hadoop-3.2.1-src/
 mvn clean package -Pdist,native -DskipTests -Dtar -Disal.lib=/lib64/ -Dbundle.isal=true
 ```
 
+Sau khi biên dịch thành công, ta có thể lấy bản binary tại `hadoop-3.2.1-src/hadoop-dist/target`.
+
+> ls -l /opt/hadoop-3.2.1-src/hadoop-dist/target
+
+Và kết quả ta nhận được:
+
+```
+total 308184
+drwxr-xr-x 2 hoangdh hoangdh      4096 Dec 26 00:47 antrun
+drwxr-xr-x 3 hoangdh hoangdh      4096 Dec 26 00:47 classes
+drwxr-xr-x 9 hoangdh hoangdh      4096 Dec 26 00:47 hadoop-3.2.1
+-rw-r--r-- 1 hoangdh hoangdh 315552460 Dec 26 00:47 hadoop-3.2.1.tar.gz
+drwxr-xr-x 3 hoangdh hoangdh      4096 Dec 26 00:47 maven-shared-archive-resources
+drwxr-xr-x 3 hoangdh hoangdh      4096 Dec 26 00:47 test-classes
+drwxr-xr-x 2 hoangdh hoangdh      4096 Dec 26 00:47 test-dir
+```
+
+
 ### 3. Tham khảo:
 - https://www.ercoppa.org/posts/how-to-compile-apache-hadoop-on-ubuntu-linux.html
 - https://blog.csdn.net/sinat_28603977/article/details/105536003
