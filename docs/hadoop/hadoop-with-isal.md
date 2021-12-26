@@ -86,5 +86,6 @@ ISA-L:   true /data/softs/hadoop-3.2.1-src/hadoop-dist/target/hadoop-3.2.1/lib/n
 
 
 ### 3. Tham khảo:
+- /opt/hadoop-3.2.1-src/BUILDING.txt
 - https://www.ercoppa.org/posts/how-to-compile-apache-hadoop-on-ubuntu-linux.html
 - https://blog.csdn.net/sinat_28603977/article/details/105536003
