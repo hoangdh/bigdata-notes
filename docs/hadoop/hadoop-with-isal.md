@@ -68,20 +68,20 @@ drwxr-xr-x 2 hoangdh hoangdh      4096 Dec 26 00:47 test-dir
 
 Kiểm tra thư viện:
 
-> hadoop checknative
+> /opt/hadoop-3.2.1-src/hadoop-dist/target/hadoop-3.2.1# bin/hadoop checknative
 
 ```
-2021-12-26 18:54:54,064 WARN bzip2.Bzip2Factory: Failed to load/initialize native-bzip2 library system-native, will use pure-Java version
-2021-12-26 18:54:54,068 INFO zlib.ZlibFactory: Successfully loaded & initialized native-zlib library
+2021-12-26 18:53:56,599 WARN bzip2.Bzip2Factory: Failed to load/initialize native-bzip2 library system-native, will use pure-Java version
+2021-12-26 18:53:56,607 INFO zlib.ZlibFactory: Successfully loaded & initialized native-zlib library
 Native library checking:
-hadoop:  true /data/softs/hadoop/lib/native/libhadoop.so.1.0.0
+hadoop:  true /data/softs/hadoop-3.2.1-src/hadoop-dist/target/hadoop-3.2.1/lib/native/libhadoop.so.1.0.0
 zlib:    true /lib/x86_64-linux-gnu/libz.so.1
 zstd  :  false 
 snappy:  true /usr/lib/x86_64-linux-gnu/libsnappy.so.1
 lz4:     true revision:10301
 bzip2:   false 
 openssl: true /usr/lib/x86_64-linux-gnu/libcrypto.so
-ISA-L:   true /data/softs/hadoop/lib/native/libisal.so.2
+ISA-L:   true /data/softs/hadoop-3.2.1-src/hadoop-dist/target/hadoop-3.2.1/lib/native/libisal.so.2
 ```
 
 
