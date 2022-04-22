@@ -8,6 +8,31 @@
 
 ### 1.2 Cài đặt Java
 
+- Tải JDK tại trang chủ
+
+`https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html`
+
+- Giải nén và thiết lập biến môi trường
+
+Giải nén vào thư mục
+
+```
+mkdir -p /usr/jdk64
+tar -C /usr/jdk64 -xvzf jdk-8u202-linux-x64.tar.gz
+```
+
+Thiết lập biên môi trường
+
+```
+cat > /etc/profile.d/java.sh << EOF
+export JAVA_HOME=/usr/jdk64/jdk1.8.0_202
+export PATH=\${JAVA_HOME}/bin:\${PATH}
+EOF
+
+chmod +x /etc/profile.d/java.sh
+bash /etc/profile.d/java.sh
+```
+
 ### 1.3 Cài đặt Maven
 
 - Tải và giải nén Maven
@@ -22,7 +47,7 @@ rm -f /tmp/maven.tgz
 
 ```
 cat > /etc/profile.d/maven.sh << EOF
-export JAVA_HOME=/usr/jdk64/jdk1.8.0_112/jre/
+export JAVA_HOME=/usr/jdk64/jdk1.8.0_202
 export M2_HOME=/opt/maven
 export MAVEN_HOME=/opt/maven
 export PATH=\${M2_HOME}/bin:\${PATH}:\${JAVA_HOME}/bin
@@ -33,6 +58,7 @@ EOF
 
 ```
 chmod +x /etc/profile.d/maven.sh
+bash /etc/profile.d/maven.sh
 ```
 
 
