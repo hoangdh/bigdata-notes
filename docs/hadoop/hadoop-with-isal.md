@@ -1,6 +1,6 @@
 # Biên dịch thư viện Hadoop với ISA-L trên Ubuntu 20.04
 
-## 1. Cài đặt môi trường:
+## 1. Cài đặt môi trường
 
 ### 1.1 Cài đặt công cụ build-essentisal
 
@@ -21,7 +21,7 @@ mkdir -p /usr/jdk64
 tar -C /usr/jdk64 -xvzf jdk-8u202-linux-x64.tar.gz
 ```
 
-Thiết lập biên môi trường
+Thiết lập biến môi trường
 
 ```
 cat > /etc/profile.d/java.sh << EOF
