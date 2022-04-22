@@ -10,6 +10,32 @@
 
 ### 1.3 Cài đặt Maven
 
+- Tải và giải nén Maven
+
+```
+curl -o /tmp/maven.tgz https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+mkdir -p /opt/maven/
+tar -C /opt/maven/ -xzf /tmp/maven.tgz --strip-components=1
+rm -f /tmp/maven.tgz 
+```
+- Thiết lập biến môi trường
+
+```
+cat > /etc/profile.d/maven.sh << EOF
+export JAVA_HOME=/usr/jdk64/jdk1.8.0_112/jre/
+export M2_HOME=/opt/maven
+export MAVEN_HOME=/opt/maven
+export PATH=\${M2_HOME}/bin:\${PATH}:\${JAVA_HOME}/bin
+EOF
+```
+
+- Phân quyền thực thi cho script
+
+```
+chmod +x /etc/profile.d/maven.sh
+```
+
+
 ### 1.4 Cài đặt Protobuf
 
 Hadoop vẫn chỉ hỗ trợ phiên bản Protobuf 2.5.0.
