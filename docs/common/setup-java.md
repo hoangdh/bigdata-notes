@@ -6,8 +6,6 @@ Tải trực tiếp từ [trang chủ](https://www.oracle.com/java/technologies/
 
 ### 2. Cài đặt jdk
 
-- Giải nén gói
-
 - Giải nén và thiết lập biến môi trường
 
 Giải nén vào thư mục
