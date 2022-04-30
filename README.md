@@ -15,6 +15,10 @@ Vài ghi chép sơ sài về các công nghệ trong Bigdata
 
 - [Cài đặt Hive + Hiveserver2 HA](docs/hive/install-hive-HA-with-ZooKeeper.md)
 
+## Spark
+
+- [Cầu hình Spark đọc ghi dữ liệu trên S3 MinIO](docs/spark/spark-with-s3-minio.md)
+
 ## Secure
 
 - [Cấu hình Kerberos KDC Master - Slave](https://github.com/hoangdh/kerberos-guide)
