@@ -17,7 +17,7 @@ Vài ghi chép sơ sài về các công nghệ trong Bigdata
 
 ## Spark
 
-- [Cầu hình Spark đọc ghi dữ liệu trên S3 MinIO](docs/spark/spark-with-s3-minio.md)
+- [Cấu hình Spark đọc ghi dữ liệu trên S3 MinIO](docs/spark/spark-with-s3-minio.md)
 
 ## Secure
 
