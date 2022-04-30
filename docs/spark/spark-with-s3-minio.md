@@ -58,3 +58,4 @@ spark.hadoop.fs.s3a.impl org.apache.hadoop.fs.s3a.S3AFileSystem
 ### 4. Tham khảo
 - https://www.codetd.com/en/article/8427627
 - https://towardsdatascience.com/apache-spark-with-kubernetes-and-fast-s3-access-27e64eb14e0f
+- https://www.jitsejan.com/setting-up-spark-with-minio-as-object-storage
