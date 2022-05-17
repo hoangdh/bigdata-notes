@@ -5,8 +5,9 @@
 
 Cú pháp:
 
-> hbase org.apache.hadoop.hbase.coprocessor.Export <tablename> <outputdir> [<versions> [<starttime> [<endtime>]]]
-
+```
+hbase org.apache.hadoop.hbase.coprocessor.Export <tablename> <outputdir> [<versions> [<starttime> [<endtime>]]]
+```
  
 Ví dụ:
   
@@ -26,9 +27,10 @@ hoangdh@nothing:~$ date +%s%N | cut -b1-13
 ## 2. Import dữ liệu
   
 Cú pháp:
-  
-> hbase org.apache.hadoop.hbase.mapreduce.Import <tablename> <inputdir>
-  
+
+```
+hbase org.apache.hadoop.hbase.mapreduce.Import <tablename> <inputdir>
+```
 **Lưu ý:** Tạo bảng tương đương trên cụm đích trước khi nhập dữ liệu.
   
 Ví dụ:
