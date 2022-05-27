@@ -2,7 +2,7 @@
 
 ### 1. Cài đặt JAVA
 
-Tham khảo hướng dẫn [sau](/docs/common/setup-java.md)
+Tham khảo hướng dẫn [sau](/docs/common/setup-java.md).
 
 ### 2. Tải và biên dịch JSVC
 
