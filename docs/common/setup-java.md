@@ -2,7 +2,9 @@
 
 ### 1. Tải gói jdk
 
-Tải trực tiếp từ [trang chủ](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
+Tải trực tiếp từ [trang chủ](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html).
+
+Trong ví dụ này, chúng ta sử dụng Java phiên bản `jdk-8u202-linux`. Nếu sử dụng bản khác; vui lòng thay thế số phiên bản vào đúng các câu lệnh bên dưới.
 
 ### 2. Cài đặt jdk
 
