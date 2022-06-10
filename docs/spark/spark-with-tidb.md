@@ -18,6 +18,8 @@ spark.sql.extensions org.apache.spark.sql.TiExtensions
 spark.sql.catalog.tidb_catalog org.apache.spark.sql.catalyst.catalog.TiCatalog
 spark.sql.catalog.tidb_catalog.pd.addresses 10.10.10.1:2379,10.10.10.2:2379,10.10.10.3:2379
 ```
+**Chú ý**: Thay thế PD của TiBD.
+
 - Thực hiện kiểm tra bằng `spark-shell`
 
 > spark-shell --executor-memory 2G --executor-cores 1 --num-executors 2
