@@ -33,5 +33,5 @@ bash /etc/profile.d/java.sh
 
 ```
 echo $JAVA_HOME
-java version
+java -version
 ```
