@@ -3,22 +3,7 @@
 Thêm cấu hình sau vào `hbase-site.xml`
 
 ```
-hbase.security.authentication
-simple
-
-hbase.security.authorization
-true
-
-hbase.coprocessor.region.classes
-org.apache.hadoop.hbase.security.access.AccessController
-
-hbase.coprocessor.regionserver.classes
-org.apache.hadoop.hbase.security.access.AccessController
-```
-
-Bản 2.x
-
-```
+...
 <property>
      <name>hbase.security.authorization</name>
      <value>true</value>
@@ -35,7 +20,6 @@ Bản 2.x
      <name>hbase.coprocessor.region.classes</name>
      <value>org.apache.hadoop.hbase.security.token.TokenProvider,org.apache.hadoop.hbase.security.access.AccessController</value>
 </property>
-
 ```
 
 ### Cho phép ghi log Audit
