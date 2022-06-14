@@ -48,4 +48,5 @@ log4j.logger.SecurityLogger.org.apache.hadoop.hbase.security.visibility.Visibili
 ...
 ```
 
+Sau đó, sử dụng `grant` trong `hbase shell` để phân quyền cho user
 
