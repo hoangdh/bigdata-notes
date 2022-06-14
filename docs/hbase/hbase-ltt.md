@@ -49,7 +49,7 @@ Options:
 
 ### Đọc ngẫu nhiên 
 
-- Đọc ngẫu nhiêu 2M rows với 10 luồng
+- Đọc ngẫu nhiên 2M rows với 10 luồng
 
 ```
 hbase-2.3.6/bin/hbase ltt -zk hbase.hoangdh.internal:2181 -zk_root /hbase -tn hoangdh:ltt -read 10 -skip_init -num_keys 2000000
