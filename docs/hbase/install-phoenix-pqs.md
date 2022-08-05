@@ -72,7 +72,7 @@ cp /opt/softs/hbase/config/hbase-site.xml /opt/softs/phoenix/bin/hbase-site.xml
 ```
 ...
 export HBASE_CONF_DIR=/opt/hbase/conf
-export PHOENIX_HOME=/data/softs/phoenix
+export PHOENIX_HOME=/opt/softs/phoenix
 export PATH=$PHOENIX_HOME/bin:$PATH
 ```
 
