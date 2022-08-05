@@ -14,7 +14,7 @@ wget https://downloads.apache.org/phoenix/phoenix-queryserver-6.0.0/phoenix-quer
 tar -xvzf phoenix-hbase-2.3-5.1.2-bin.tar.gz
 tar -xzvf phoenix-queryserver-6.0.0-bin.tar.gz
 
-cp -r phoenix-queryserver-6.0.0-bin/* phoenix-hbase-2.3-5.1.2-bin/
+cp -r phoenix-queryserver-6.0.0/* phoenix-hbase-2.3-5.1.2-bin/
 
 ln -s /opt/softs/phoenix-hbase-2.3-5.1.2-bin/ /opt/softs/phoenix
 
