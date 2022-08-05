@@ -7,7 +7,7 @@ Vài ghi chép sơ sài về các công nghệ trong Bigdata
 
 ### HBase
 
-- [Cài đặt Apache Phoenix và kích hoạt Phoenix QueryServer (PQS)](docs/hbase/install_phoenix_pqs.md)
+- [Cài đặt Apache Phoenix và kích hoạt Phoenix QueryServer (PQS)](docs/hbase/install-phoenix-pqs.md)
 - [Giám sát HBase với Prometheus và Grafana](docs/hbase/hbase-prometheus.md)
 - [Sử dụng HBTop](docs/hbase/hbtop-introduction.md)
 - [Cấu hình Authorization Basic và bật Audit Log trong HBase](docs/hbase/authorization-basic-hbase.md)
