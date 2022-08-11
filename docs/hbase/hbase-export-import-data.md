@@ -27,6 +27,19 @@ hoangdh@nothing:~$ date --date="15 days ago" +%s%N | cut -b1-13
 hoangdh@nothing:~$ date +%s%N | cut -b1-13
 1652777349936
 ```
+
+### Export lên S3 MinIO
+
+**Môi trường:**
+- HBase 2.3.6
+- https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/2.9.0/hadoop-aws-2.9.0.jar
+- https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk/1.11.934/aws-java-sdk-1.11.934.jar 
+
+Khai báo thông tin S3 vào câu lệnh. Trong ví dụ; export bảng **test_export** ra bucket **ahihi**.
+
+```
+hbase org.apache.hadoop.hbase.mapreduce.Export -Dfs.s3a.access.key=acesskey -Dfs.s3a.secret.key=SecretKey -Dfs.s3a.endpoint=http://10.10.10.101:9000 -Dfs.s3a.connection.ssl.enabled=false -Dfs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem -Dhbase.zookeeper.quorum=10.10.10.10:2181 -Dzookeeper.znode.parent=/hbase -D mapreduce.output.fileoutputformat.compress=true -Dmapreduce.output.fileoutputformat.compress.codec=org.apache.hadoop.io.compress.SnappyCodec -Dmapreduce.output.fileoutputformat.compress.type=BLOCK test_export s3a://ahihi/test_export_snappy 1
+```
   
 ## 2. Import dữ liệu
   
