@@ -38,7 +38,17 @@ hoangdh@nothing:~$ date +%s%N | cut -b1-13
 Khai báo thông tin S3 vào câu lệnh. Trong ví dụ; export bảng **test_export** ra bucket **ahihi**.
 
 ```
-hbase org.apache.hadoop.hbase.mapreduce.Export -Dfs.s3a.access.key=acesskey -Dfs.s3a.secret.key=SecretKey -Dfs.s3a.endpoint=http://10.10.10.101:9000 -Dfs.s3a.connection.ssl.enabled=false -Dfs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem -Dhbase.zookeeper.quorum=10.10.10.10:2181 -Dzookeeper.znode.parent=/hbase -D mapreduce.output.fileoutputformat.compress=true -Dmapreduce.output.fileoutputformat.compress.codec=org.apache.hadoop.io.compress.SnappyCodec -Dmapreduce.output.fileoutputformat.compress.type=BLOCK test_export s3a://ahihi/test_export_snappy 1
+hbase org.apache.hadoop.hbase.mapreduce.Export \
+-Dfs.s3a.access.key=acesskey -Dfs.s3a.secret.key=SecretKey \
+-Dfs.s3a.endpoint=http://10.10.10.101:9000 \
+-Dfs.s3a.connection.ssl.enabled=false \
+-Dfs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
+-Dhbase.zookeeper.quorum=10.10.10.10:2181 \
+-Dzookeeper.znode.parent=/hbase \
+-Dmapreduce.output.fileoutputformat.compress=true \
+-Dmapreduce.output.fileoutputformat.compress.codec=org.apache.hadoop.io.compress.SnappyCodec \
+-Dmapreduce.output.fileoutputformat.compress.type=BLOCK \
+test_export s3a://ahihi/test_export_snappy 1
 ```
   
 ## 2. Import dữ liệu
