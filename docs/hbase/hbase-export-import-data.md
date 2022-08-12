@@ -43,6 +43,7 @@ hbase org.apache.hadoop.hbase.mapreduce.Export \
 -Dfs.s3a.endpoint=http://10.10.10.101:9000 \
 -Dfs.s3a.connection.ssl.enabled=false \
 -Dfs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
+-Dfs.s3a.path.style.access=true \
 -Dhbase.zookeeper.quorum=10.10.10.10:2181 \
 -Dzookeeper.znode.parent=/hbase \
 -Dmapreduce.output.fileoutputformat.compress=true \
