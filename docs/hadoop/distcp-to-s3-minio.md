@@ -8,6 +8,8 @@
 
 Sử dụng biến **HADOOP_OPTIONAL_TOOLS** trong **hadoop-env.sh**
 
+**Tham khảo:** https://stackoverflow.com/a/57114787
+
 ### 2. Sao chép dữ liệu sang S3 MinIO
 
 ```
