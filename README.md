@@ -1,7 +1,9 @@
 # bigdata-notes
 Vài ghi chép sơ sài về các công nghệ trong Bigdata
 
-### Hadoop
+## Hadoop Ecosystem
+
+### Hadoop (HDFS + YARN)
 
 - [Biên dịch Hadoop với I-SAL để sử dụng tính năng Erasure Coding](/docs/hadoop/hadoop-with-isal.md)
 - [Sao chép dữ liệu từ HDFS lên S3 MinIO](/docs/hadoop/distcp-to-s3-minio.md)
