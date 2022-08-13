@@ -53,7 +53,7 @@ hbase org.apache.hadoop.hbase.mapreduce.Export \
 test_export s3a://ahihi/test_export_snappy 1
 ```
 
-### Sử dụng Snapshot
+#### Bonus: Sử dụng Snapshot
 
 - Tạo snapshot
 
@@ -72,10 +72,27 @@ hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot \
 -Dfs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
 -Dfs.s3a.path.style.access=true \
 -Dmapreduce.map.memory.mb=2048 \
--Ddfs.replication=2 \
 -snapshot test_export-snapshot-20220813 \
 -copy-to s3a://ahihi/snapshot \
 -copy-from hdfs://10.10.10.10:8020/hbase \
+-mappers 4
+```
+
+- Kéo snapshot từ S3 MinIO về HDFS
+
+```
+hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot \
+-Dfs.s3a.access.key=acesskey \
+-Dfs.s3a.secret.key=SecretKey \
+-Dfs.s3a.endpoint=http://10.10.10.101:9000 \
+-Dfs.s3a.connection.ssl.enabled=false \
+-Dfs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
+-Dfs.s3a.path.style.access=true \
+-Dmapreduce.map.memory.mb=2048 \
+-Ddfs.replication=2 \
+-snapshot test_export-snapshot-20220813 \
+-copy-from s3a://ahihi/snapshot \
+-copy-to hdfs://10.10.20.10:8020/hbase \
 -mappers 4
 ```
 
