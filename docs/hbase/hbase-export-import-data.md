@@ -39,7 +39,8 @@ Khai báo thông tin S3 vào câu lệnh. Trong ví dụ; export bảng **test_e
 
 ```
 hbase org.apache.hadoop.hbase.mapreduce.Export \
--Dfs.s3a.access.key=acesskey -Dfs.s3a.secret.key=SecretKey \
+-Dfs.s3a.access.key=acesskey \
+-Dfs.s3a.secret.key=SecretKey \
 -Dfs.s3a.endpoint=http://10.10.10.101:9000 \
 -Dfs.s3a.connection.ssl.enabled=false \
 -Dfs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
@@ -51,7 +52,33 @@ hbase org.apache.hadoop.hbase.mapreduce.Export \
 -Dmapreduce.output.fileoutputformat.compress.type=BLOCK \
 test_export s3a://ahihi/test_export_snappy 1
 ```
-  
+
+### Sử dụng Snapshot
+
+- Tạo snapshot
+
+```
+echo "snapshot 'test_export', 'test_export-snapshot-20220813'" | hbase shell -n
+```
+
+- Đẩy snapshot lên S3 MinIO
+
+```
+hbase org.apache.hadoop.hbase.snapshot.ExportSnapshot \
+-Dfs.s3a.access.key=acesskey \
+-Dfs.s3a.secret.key=SecretKey \
+-Dfs.s3a.endpoint=http://10.10.10.101:9000 \
+-Dfs.s3a.connection.ssl.enabled=false \
+-Dfs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem \
+-Dfs.s3a.path.style.access=true \
+-Dmapreduce.map.memory.mb=2048 \
+-Ddfs.replication=2 \
+-snapshot test_export-snapshot-20220813 \
+-copy-to s3a://ahihi/snapshot \
+-copy-from hdfs://10.10.10.10:8020/hbase \
+-mappers 4
+```
+
 ## 2. Import dữ liệu
   
 Cú pháp:
