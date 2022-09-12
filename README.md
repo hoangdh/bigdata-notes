@@ -23,6 +23,7 @@ Vài ghi chép sơ sài về các công nghệ trong Bigdata
 
 - [Cấu hình Spark đọc ghi dữ liệu trên S3 MinIO](docs/spark/spark-with-s3-minio.md)
 - [Cấu hình Spark đọc ghi dữ liệu vào TiDB sử dụng TiSpark](docs/spark/spark-with-tidb.md)
+- [Cấu hình Spark đọc ghi dữ liệu vào nhiều cụm HDFS](docs/spark/spark-read-multiple-hdfs-cluster.md)
 
 ## Secure
 
