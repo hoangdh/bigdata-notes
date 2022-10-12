@@ -64,3 +64,28 @@ Truy cập vào địa chỉ tương ứng với các role như sau:
 ### 4. Tham khảo:
 - https://javamana.com/2021/03/20210329135504957C.html
 - https://godatadriven.com/blog/monitoring-hbase-with-prometheus/
+
+
+### Bonus
+
+Lấy tổng request đọc/ghi của bảng
+
+```
+lowercaseOutputName: true
+lowercaseOutputLabelNames: true
+rules:
+  - pattern: Hadoop<service=HBase, name=RegionServer, sub=Regions><>Namespace_([^\W_]+)_table_([^\W_]+)_region_([^\W_]+)_metric_(\w+)
+    name: HBase_metric_$4
+    labels:
+      namespace: "$1"
+      table: "$2"
+      region: "$3"
+      ahihi: "$4"
+  - pattern: Hadoop<service=HBase, name=RegionServer, sub=TableLatencies><>Namespace_(\w+)_table_(\w+)_metric_(\w+)_count
+    name: hbase_tablerequestcount
+    labels:
+      "namespace": "$1"
+      "table": "$2"
+      "metric": "$3"
+  - pattern: .+
+```
