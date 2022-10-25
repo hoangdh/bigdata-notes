@@ -161,23 +161,23 @@ Tạo sẵn bảng trên cụm đích.
 
 ```
 hbase org.apache.hadoop.hbase.mapreduce.CopyTable -Dhbase.zookeeper.quorum=10.10.1.10:2181 -Dzookeeper.znode.parent=/hbase -Dmapreduce.job.queuename=queue1 --peer.adr=10.10.2.10:2181:/hbase --new.name=hoangdh_test_copytable hoangdh_test
-``
+```
 
 ## 3. Kiểm tra
   
-  Để xác minh dữ liệu đã được chuyển sang cụm mới, chúng ta sử dụng `RowCounter` - đếm tổng số rowkey của bảng.
-  
-  Cụm nguồn:
-  
-  ```
+Để xác minh dữ liệu đã được chuyển sang cụm mới, chúng ta sử dụng `RowCounter` - đếm tổng số rowkey của bảng.
+
+Cụm nguồn:
+
+```
 hbase org.apache.hadoop.hbase.mapreduce.RowCounter -Dhbase.zookeeper.quorum=10.10.10.10:2181 -Dzookeeper.znode.parent=/hbase test_export
-  ```
-  
-  Cụm đích:
-  
-  ```
+```
+
+Cụm đích:
+
+```
 hbase org.apache.hadoop.hbase.mapreduce.RowCounter -Dhbase.zookeeper.quorum=10.10.20.10:2181 -Dzookeeper.znode.parent=/hbase test_export
-  ```
-      
-  ## 4. Tham khảo:
-  - https://hbase.apache.org/book.html#tools
+```
+
+## 4. Tham khảo:
+- https://hbase.apache.org/book.html#tools
