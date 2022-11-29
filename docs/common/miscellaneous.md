@@ -13,7 +13,7 @@ export _JAVA_OPTIONS="-Dsun.security.krb5.debug=true -Dsun.security.jgss.debug=t
 ### Submit MR chạy local
 
 ```
-hadoop -mapreduce.framework.name=local ...
+hadoop -Dmapreduce.framework.name=local ...
 ```
 
 Tham khảo: https://stackoverflow.com/a/55988533
