@@ -9,3 +9,11 @@ Hoặc sử dụng biến:
 ```
 export _JAVA_OPTIONS="-Dsun.security.krb5.debug=true -Dsun.security.jgss.debug=true -Dsun.security.spnego.debug=true -Djava.io.tmpdir=/data/tmp"
 ```
+
+### Submit MR chạy local
+
+```
+hadoop -mapreduce.framework.name=local ...
+```
+
+Tham khảo: https://stackoverflow.com/a/55988533
