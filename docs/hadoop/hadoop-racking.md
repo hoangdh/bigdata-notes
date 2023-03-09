@@ -76,4 +76,15 @@ Trong ví dụ, ta có 3 Rack `vn-han1`, `vn-han2` và `vn-han3` và các máy c
 
 **Lưu ý**: Thay đổi đường dẫn file đúng với môi trường
 
+- Kiểm tra biến `HADOOP_CONF_DIR` trong file `$HADOOP_HOME/etc/hadoophadoop-env.sh`
+
+```
+...
+export HADOOP_CONF_DIR=${HADOOP_HOME}/etc/hadoop
+...
+```
+
 - Khởi động lại NameNode
+
+### Tham khảo:
+- https://docs.cloudera.com/HDPDocuments/HDP3/HDP-3.0.0/data-storage/content/improving_performance_with_hdfs_rack_awareness.html
