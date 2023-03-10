@@ -17,4 +17,6 @@ log4j.appender.DRFAAUDIT.MaxBackupIndex=10
  
 - Khởi động Namenode cụm HDFS.
 
-Ref: https://blog.csdn.net/u011281987/article/details/30034143
+## Tham khảo: 
+- https://www.ibm.com/docs/en/fci/6.5.0?topic=administering-hdfs-audit-logging
+- https://blog.csdn.net/u011281987/article/details/30034143
