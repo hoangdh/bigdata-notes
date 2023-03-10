@@ -15,6 +15,14 @@ mkdir -p $HADOOP_HOME/pid
 chown -R hdfs: $HADOOP_HOME/pid
 ```
 
+Sửa thông tin trong file `hadoop-env.sh`
+
+```
+...
+export HADOOP_PID_DIR=${HADOOP_HOME}/pid
+...
+```
+
 - File mẫu cho Namenode - `/etc/systemd/system/hadoop-namenode.service`
 
 ```
