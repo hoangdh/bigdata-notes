@@ -8,6 +8,8 @@ export HDFS_NAMENODE_OPTS="$HDFS_NAMENODE_OPTS -Dhdfs.audit.logger=${HDFS_AUDIT_
 ```
 
  - Kiểm tra `log4j.properties`
+ 
+ Ta có thể thay đổi kích thước và số lượng file log tại cấu hình. Trong ví dụ này, ta đặt kích thước mỗi file là 100M với số lượng là 10.
 
  ```
 log4j.appender.DRFAAUDIT=org.apache.log4j.RollingFileAppender
