@@ -30,8 +30,69 @@ chown yarn: /sys/fs/cgroup/devices/yarn
 - Thêm cấu hình về thông tin GPU
 
 ```
-</onfiguration>
+<configuration>
 ...
+
+<configuration>
+         <property>
+                <name>yarn.resourcemanager.hostname</name>
+		            <value>10.10.10.100</value>
+        </property>
+         <property>
+                <name>yarn.resourcemanager.scheduler.class</name>
+                <value>org.apache.hadoop.yarn.server.resourcemanager.scheduler.capacity.CapacityScheduler</value>
+        </property>
+         <property>
+                <name>yarn.scheduler.minimum-allocation-mb</name>
+                <value>512</value>
+        </property>
+         <property>
+                <name>yarn.scheduler.maximum-allocation-mb</name>
+                <value>2048</value>
+        </property>
+         <property>
+		            <name>yarn.nodemanager.resource.memory-mb</name>
+                <value>2048</value>
+        </property>
+         <property>
+                <name>yarn.nodemanager.resource.cpu-vcores</name>
+                <value>2</value>
+        </property>
+      	<property>
+	  	          <name>yarn.nodemanager.aux-services</name>
+                 <value>mapreduce_shuffle</value>
+        </property>
+        <property>
+                <name>yarn.nodemanager.env-whitelist</name>
+        	   <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME</value>
+        </property>
+        <property>
+                <name>yarn.resourcemanager.principal</name>
+		            <value>yarn/_HOST@SECURE.ADT</value>
+        </property>
+        <property>
+                <name>yarn.resourcemanager.keytab</name>
+                <value>/opt/hadoop/data_secure/security/yarn.keytab</value>
+        </property>
+        <property>
+                <name>yarn.nodemanager.principal</name>
+                <value>yarn/_HOST@SECURE.ADT</value>
+        </property>
+        <property>
+                <name>yarn.nodemanager.keytab</name>
+                <value>/opt/hadoop/data_secure/security/yarn.keytab</value>
+        </property>
+        <property>
+                <name>yarn.nodemanager.container-executor.class</name>
+                <value>org.apache.hadoop.yarn.server.nodemanager.LinuxContainerExecutor</value>
+	      </property>
+        <property>
+                <name>yarn.nodemanager.linux-container-executor.group</name>
+                <value>hadoop</value>
+        </property>
+        <property>
+                <name>yarn.webapp.ui2.enable</name>
+                <value>true</value>
         <!-- GPU Configuration -->
         <property>
                 <name>yarn.nodemanager.resource-plugins</name>
