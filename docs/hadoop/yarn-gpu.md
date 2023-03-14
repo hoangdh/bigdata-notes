@@ -58,6 +58,10 @@ chown yarn: /sys/fs/cgroup/devices/yarn
                 <name>yarn.nodemanager.resource.cpu-vcores</name>
                 <value>2</value>
         </property>
+	<property>
+                <name>yarn.nodemanager.local-dirs</name>
+                <value>/opt/hadoop/data_secure/tmp</value>
+        </property>
       	<property>
 	  	 <name>yarn.nodemanager.aux-services</name>
                  <value>mapreduce_shuffle</value>
