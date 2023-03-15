@@ -33,7 +33,7 @@ After=network.target
 [Service]
 Type=simple
 User=hdfs
-PIDFile=/opt/hadoop/pid/hadoop-hoangdh-namenode.pid
+PIDFile=/opt/hadoop/pid/hadoop-hdfs-namenode.pid
 ExecStart=/opt/hadoop/bin/hdfs --daemon start namenode
 ExecStop=/opt/hadoop/bin/hdfs --daemon stop namenode
 Restart=on-abort
@@ -52,7 +52,7 @@ After=network.target
 [Service]
 Type=simple
 User=hdfs
-PIDFile=/opt/hadoop/pid/hadoop-hoangdh-datanode.pid
+PIDFile=/opt/hadoop/pid/hadoop-hdfs-datanode.pid
 ExecStart=/opt/hadoop/bin/hdfs --daemon start datanode
 ExecStop=/opt/hadoop/bin/hdfs --daemon stop datanode
 Restart=on-abort
