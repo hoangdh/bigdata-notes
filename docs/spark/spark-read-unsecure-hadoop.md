@@ -26,3 +26,22 @@ spark.hadoop.ipc.client.fallback-to-simple-auth-allowed=true
 
 - Tham khảo
   - https://community.cloudera.com/t5/Support-Questions/Running-distcp-between-two-cluster-One-Kerberized-and-the/m-p/94372/highlight/true#M57794
+
+## Sao chép file từ HDFS sang HDFS khác
+
+```
+val conf = new org.apache.hadoop.conf.Configuration()
+val srcPath = new org.apache.hadoop.fs.Path("hdfs://my/src/path")
+val dstPath = new org.apache.hadoop.fs.Path("hdfs://my/dst/path")
+
+org.apache.hadoop.fs.FileUtil.copy(
+srcPath.getFileSystem(conf), 
+srcPath, 
+dstPath.getFileSystem(conf), 
+dstPath, 
+false,
+conf
+)
+```
+
+Tham khảo: https://stackoverflow.com/a/56878547
