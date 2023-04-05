@@ -78,11 +78,6 @@ cd hadoop-3.2.1-src/
 mvn clean package -Pdist,native -DskipTests -Dtar -Disal.lib=/lib64/ -Dbundle.isal=true
 ```
 
-Kích hoạt cả Snappy, ISAL, ZSTD, OpenSSL 
-
-> mvn clean package -Pdist,native -DskipTests -Dtar -Dbundle.isal=true -Dbundle.snappy=true -Dbundle.zstd=true -Dbundle.openssl=true
-
-
 Sau khi biên dịch thành công, ta có thể lấy bản binary tại `hadoop-3.2.1-src/hadoop-dist/target`.
 
 > ls -l /opt/hadoop-3.2.1-src/hadoop-dist/target
@@ -118,6 +113,20 @@ openssl: true /usr/lib/x86_64-linux-gnu/libcrypto.so
 ISA-L:   true /data/softs/hadoop-3.2.1-src/hadoop-dist/target/hadoop-3.2.1/lib/native/libisal.so.2
 ```
 
+### Bonus: Biên dịch sử dụng Docker
+
+- Cài đặt Docker
+- Tải mã nguồn và biên dịch
+
+Kích hoạt cả Snappy, ISAL, ZSTD, OpenSSL 
+
+```
+cd /opt
+tar -xzf hadoop-3.2.1-src.tar.gz
+cd hadoop-3.2.1-src/
+./start-build-env.sh
+mvn clean package -Pdist,native -DskipTests -Dtar -Dbundle.isal=true -Dbundle.snappy=true -Dbundle.zstd=true -Dbundle.openssl=true -Disal.lib=/usr/lib/ -Dopenssl.lib=/usr/lib/x86_64-linux-gnu/ -Dzstd.lib=/usr/lib/x86_64-linux-gnu/ -Dsnappy.lib=/usr/lib/x86_64-linux-gnu/
+```
 
 ### 3. Tham khảo:
 - /opt/hadoop-3.2.1-src/BUILDING.txt
