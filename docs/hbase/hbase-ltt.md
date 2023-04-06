@@ -47,6 +47,14 @@ Options:
  -mob_threshold <arg>            Desired cell size to exceed in bytes that will use the MOB write path
 ```
 
+### Ghi ngẫu nhiên
+
+Ghi 10 cột, size 500B, 5 luồng và 2M dòng.
+
+```
+hbase-2.3.6/bin/hbase ltt -zk hbase.hoangdh.internal:2181 -zk_root /hbase -tn hoangdh:ltt -write 10:500:5 -num_keys 2000000
+```
+
 ### Đọc ngẫu nhiên 
 
 - Đọc ngẫu nhiên 2M rows với 10 luồng
