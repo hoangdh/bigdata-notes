@@ -2,11 +2,11 @@
 
 ### Nguyên nhân
 
-Từ bản Hadoop 3.2.1+; Hadoop bắt buộc phải xác thực mới có thể xem Web UI của Namenode. Lỗi trên xuất hiện khi ta cấu hình `hadoop.http.authentication.type` là `sample`.
+Theo thử nghiệm cá nhân; từ bản Hadoop 3.2.1+; Hadoop Secure bắt buộc phải xác thực mới có thể xem Web UI của Namenode. Lỗi trên xuất hiện khi ta cấu hình `hadoop.http.authentication.type` là `simple`.
 
 ### Khắc phục
 
-Để khắc phục, ta sửa lại phương thức xác thực về `kerberos`
+Để khắc phục, ta sửa lại phương thức xác thực về `kerberos`. Tham khảo thêm các [cấu hình liên quan](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/WebHDFS.html).
 
 ```
 ...
