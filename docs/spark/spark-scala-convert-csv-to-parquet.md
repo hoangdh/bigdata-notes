@@ -7,7 +7,7 @@ df.repartition(50).write.option("compression", "snappy").parquet("/data/ec/recom
 
 - Đọc từ 1 cụm khác và ghi vào cụm mới có bật Erasure coding
 - Gộp thành 50 files
-- Sử dụng nén là SNAPPY
+- Sử dụng nén là SNAPPY - `Available codecs are brotli, uncompressed, lz4, gzip, lzo, snappy, none, zstd.`
 
 ### Tham khảo:
 - https://sparkbyexamples.com/spark/spark-convert-csv-to-avro-parquet-json/
