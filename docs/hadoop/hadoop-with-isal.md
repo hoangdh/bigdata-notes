@@ -125,7 +125,7 @@ cd /opt
 tar -xzf hadoop-3.2.1-src.tar.gz
 cd hadoop-3.2.1-src/
 ./start-build-env.sh
-mvn clean package -Pdist,native -DskipTests -Dtar -Dbundle.isal=true -Dbundle.snappy=true -Dbundle.zstd=true -Dbundle.openssl=true -Disal.lib=/usr/lib/ -Dopenssl.lib=/usr/lib/x86_64-linux-gnu/ -Dzstd.lib=/usr/lib/x86_64-linux-gnu/ -Dsnappy.lib=/usr/lib/x86_64-linux-gnu/
+mvn clean package -Pdist,native -DskipTests -Dtar -Dbundle.isal=true -Dbundle.snappy=true -Dbundle.zstd=true -Dbundle.openssl=true -Disal.lib=/usr/lib/ -Dopenssl.lib=/usr/lib/x86_64-linux-gnu/ -Dzstd.lib=/usr/lib/x86_64-linux-gnu/ -Dsnappy.lib=/usr/lib/x86_64-linux-gnu/ -Pyarn-ui
 ```
 
 ### 3. Tham khảo:
