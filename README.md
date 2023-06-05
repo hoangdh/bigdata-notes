@@ -14,6 +14,7 @@ Vài ghi chép sơ sài về các công nghệ trong Bigdata
 - [Giám sát HBase với Prometheus và Grafana](docs/hbase/hbase-prometheus.md)
 - [Sử dụng HBTop](docs/hbase/hbtop-introduction.md)
 - [Cấu hình Authorization Basic và bật Audit Log trong HBase](docs/hbase/authorization-basic-hbase.md)
+- [Bật Thrift server](docs/hbase/hbase-enable-thrift.md)
 
 ### Hive
 
