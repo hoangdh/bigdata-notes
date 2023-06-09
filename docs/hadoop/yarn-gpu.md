@@ -1,7 +1,10 @@
 # Cấu hình YARN NodeManager với GPU
 
 ## 1. Cài đặt Driver của Nvidia
-## 2. Cài đặt và cáu hình Hadoop YARN NodeManager
+
+Trên Ubuntu LTS: https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#ubuntu-lts
+
+## 2. Cài đặt và cấu hình Hadoop YARN NodeManager
 
 ### 3.1 Tạo thư mục khởi tạo môi trường cho YARN:
 
