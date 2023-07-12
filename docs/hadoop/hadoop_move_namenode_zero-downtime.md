@@ -1,4 +1,4 @@
-## Chuyển NameNode sang máy chủ khác (Không cần downtime)
+## Chuyển NameNode sang máy chủ khác (Không downtime)
 
 ## Đặt vấn đề
 
@@ -34,7 +34,8 @@ Trước đó, ta sẽ 'graceful' 02 datanode để đảm bảo dữ liệu đ�
     - Bootstrap Namenode Standby: `hdfs namenode -bootstrapStandby`
     - Khởi động Namenode: `hdfs --daemon start namenode`
     - Khởi động ZKFC: `hdfs --daemon start zkfc`
-- Khởi động lại toàn bộ Datanode (`node1` -> `node3`) để nhận Namenode Standby
+- Khởi động lại lần lượt các Datanode (`node1` -> `node3`) để nhận Namenode Standby
+  - Làm lần lượt từng máy; kiểm tra bằng câu lệnh `hdfs fsck /` và tra log trong suốt quá trình
 - Kiểm tra log của Namenode Standby cho tới khi Namenode mới nhận hết thông tin báo cáo từ các Datanode và tự động thoát `Safemode`
 - Failover sang Namenode mới `node1` và kiểm tra log
   - Ví dụ: `hdfs haadmin -failover nn1 nn2`
