@@ -76,7 +76,7 @@ Trong ví dụ, ta có 3 Rack `vn-han1`, `vn-han2` và `vn-han3` và các máy c
 
 **Lưu ý**: Thay đổi đường dẫn file đúng với môi trường
 
-- Kiểm tra biến `HADOOP_CONF_DIR` trong file `$HADOOP_HOME/etc/hadoophadoop-env.sh`
+- Kiểm tra biến `HADOOP_CONF_DIR` trong file `$HADOOP_HOME/etc/hadoop-env.sh`
 
 ```
 ...
