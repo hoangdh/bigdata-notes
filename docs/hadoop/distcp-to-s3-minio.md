@@ -55,3 +55,11 @@ Bonus: Khai báo thông tin S3 MinIO vào `hdfs-site.xml`
 
 </configuration>
 ```
+
+### 3. Thực hiện sao chép dữ liệu
+
+Trong ví dụ, ta sẽ sao chép thư mục `datawarehouse` trên HDFS vào bucket `bigdata` của S3
+
+```
+hadoop distcp hdfs://10.10.10.1/datawarehouse s3a://bigdata/
+```
