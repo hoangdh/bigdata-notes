@@ -9,6 +9,13 @@ df.repartition(50).write.option("compression", "snappy").parquet("/data/ec/recom
 - Gộp thành 50 files
 - Sử dụng nén là SNAPPY - `Available codecs are brotli, uncompressed, lz4, gzip, lzo, snappy, none, zstd.`
 
+### JSON thành Parquet
+
+```
+val df = spark.read.json("hdfs://10.10.10.10:8020/data/recommend_json/")
+df.repartition(50).write.option("compression", "snappy").parquet("/data/ec/recommend_parquet/")
+```
+
 ### Tham khảo:
 - https://sparkbyexamples.com/spark/spark-convert-csv-to-avro-parquet-json/
 - https://stackoverflow.com/q/69309866
