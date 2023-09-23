@@ -66,7 +66,7 @@ server.7=10.10.10.117:7888:7889
 
 Kết nối tới Zookeeper và thực hiện lệnh:
 
-> zkCli.sh -server 10.10.10.11:2181
+> zkCli.sh -server 10.10.10.111:2181
 
 Thực hiện lệnh reconfig và `config -s` xem lại cấu hình hay đổi
 
