@@ -187,7 +187,7 @@ Nếu thông báo sau xuất hiện:
 Ta kiểm tra thông tin thư viện giữa Hadoop và Hive
 
 ```
-ls $HADOOP_HOME/lib/guava*
+ls $HADOOP_HOME/share/hadoop/hdfs/lib/guava*
 ls $HIVE_HOME/lib/guava*
 ```
 
@@ -195,7 +195,7 @@ Thực hiện xóa thư viện cũ và đưa thư viện tương thích vào HIV
 
 ```
 rm -rf $HIVE_HOME/lib/guava*
-cp $HADOOP_HOME/lib/guava* $HIVE_HME/lib/
+cp $HADOOP_HOME/share/hadoop/hdfs/lib/guava* $HIVE_HME/lib/
 ```
 
 Sau đó khởi tạo lại DB với lệnh:
