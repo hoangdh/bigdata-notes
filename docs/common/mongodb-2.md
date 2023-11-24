@@ -8,6 +8,18 @@ Thay vì lưu trữ dữ liệu trong các bảng của hàng hoặc cột như 
 
 Đây là một tài liệu JSON đơn giản mô tả một nhân vật lịch sử:
 
+```
+{
+  "_id": 1,
+  "name": {
+    "first": "Ada",
+    "last": "Lovelace"
+  },
+  "title": "The First Programmer",
+  "interests": ["mathematics", "programming"]
+}
+```
+
 Cơ sở dữ liệu tài liệu có tính linh hoạt cao, cho phép cấu trúc tài liệu khác nhau và lưu trữ các tài liệu chưa hoàn chỉnh. Một tài liệu có thể chứa các tài liệu khác nhúng bên trong. Các trường trong một tài liệu đóng vai trò giống như cột trong cơ sở dữ liệu SQL, và giống như cột, chúng có thể được lập chỉ mục để tăng hiệu suất tìm kiếm.
 
 Từ khi thành lập, MongoDB được xây dựng trên kiến trúc mở rộng, một cấu trúc cho phép nhiều máy nhỏ làm việc cùng nhau để tạo ra các hệ thống nhanh và xử lý khối lượng dữ liệu lớn. 
