@@ -288,6 +288,7 @@ beeline> !connect jdbc:hive2://zk1,zk2,zk3:2181/;serviceDiscoveryMode=zooKeeper;
 - https://docs.cloudera.com/HDPDocuments/HDP2/HDP-2.6.3/bk_command-line-installation/content/validate_installation.html
 - https://phoenixnap.com/kb/install-hive-on-ubuntu
 - https://stackoverflow.com/a/50753233
+- http://www.mtitek.com/tutorials/bigdata/hive/install.php (Update)
 - HA: 
   - https://www.ibm.com/docs/en/db2-big-sql/5.0.1?topic=availability-enabling-hiveserver2-high
   - https://docs.cloudera.com/HDPDocuments/HDP2/HDP-2.3.0/bk_hadoop-ha/content/ha-hs2-rolling-upgrade.html
