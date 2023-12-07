@@ -73,30 +73,52 @@ MongoDB đã trở thành một trong những cơ sở dữ liệu được ưa 
 
 Để hiểu xem MongoDB có phù hợp với bạn hay không, hãy cùng xem qua những lợi ích của MongoDB đối với các nhà phát triển. Bạn cũng có thể xem qua 5 tính năng nổi bật nhất của MongoDB.
 
-#### Sức mạnh của cơ sở dữ liệu hướng tài liệu
+#### Sức mạnh của cơ sở dữ liệu hướng tài liệu  
 
-MongoDB là tiên phong của cái mà người ta gọi là cơ sở dữ liệu NoSQL, được phát triển bởi vì các hệ thống RDBMS dựa trên SQL không hỗ trợ quy mô hoặc tốc độ phát triển nhanh chóng cần thiết cho việc tạo các ứng dụng hiện đại. 
+MongoDB là tiên phong của cái mà người ta gọi là cơ sở dữ liệu NoSQL, được phát triển bởi vì các hệ thống RDBMS dựa trên SQL không hỗ trợ quy mô hoặc tốc độ phát triển nhanh chóng cần thiết cho việc tạo các ứng dụng hiện đại.
 
-NoSQL là một thuật ngữ chung; nó bao gồm cả cơ sở dữ liệu hướng tài liệu như MongoDB, cơ sở dữ liệu cột, cơ sở dữ liệu in-memory, và nhiều hơn nữa.
+NoSQL là một thuật ngữ chung; nó bao gồm cả cơ sở dữ liệu hướng tài liệu như MongoDB, cơ sở dữ liệu cột, cơ sở dữ liệu in-memory, và nhiều hơn nữa.  
 
 Trong MongoDB, các bản ghi được lưu trữ dưới dạng tài liệu trong các tệp BSON được nén. Các tài liệu có thể được truy xuất trực tiếp ở định dạng JSON, có nhiều lợi ích:
 
-- Đây là một dạng tự nhiên để lưu trữ dữ liệu.
-- Dễ đọc đối với con người.  
-- Thông tin có cấu trúc và phi cấu trúc có thể được lưu trữ trong cùng một tài liệu.
-- Bạn có thể lồng JSON để lưu trữ các đối tượng dữ liệu phức tạp.  
-- JSON có schema linh hoạt và động, vì vậy việc thêm trường hoặc bỏ qua một trường không phải là vấn đề.
-- Tài liệu ánh xạ đến các đối tượng trong hầu hết các ngôn ngữ lập trình phổ biến.
+- Đây là một dạng tự nhiên để lưu trữ dữ liệu   
+- Dễ đọc đối với con người
+- Thông tin có cấu trúc và phi cấu trúc có thể được lưu trữ trong cùng một tài liệu
+- Bạn có thể lồng JSON để lưu trữ các đối tượng dữ liệu phức tạp  
+- JSON có schema linh hoạt và động, vì vậy việc thêm trường hoặc bỏ qua một trường không phải là vấn đề  
+- Tài liệu ánh xạ đến các đối tượng trong hầu hết các ngôn ngữ lập trình phổ biến  
 
 Hầu hết các nhà phát triển thấy dễ dàng làm việc với JSON vì đây là một cách đơn giản và mạnh mẽ để mô tả và lưu trữ dữ liệu.
 
-Có lẽ quan trọng nhất, nhà phát triển kiểm soát schema của cơ sở dữ liệu. Các nhà phát triển điều chỉnh và định dạng lại schema của cơ sở dữ liệu khi ứng dụng phát triển mà không cần sự trợ giúp của quản trị cơ sở dữ liệu. Khi cần thiết, MongoDB có thể phối hợp và kiểm soát các thay đổi đối với cấu trúc của tài liệu bằng cách sử dụng xác thực schema.
+Có lẽ quan trọng nhất, nhà phát triển kiểm soát schema của cơ sở dữ liệu. Các nhà phát triển điều chỉnh và định dạng lại schema của cơ sở dữ liệu khi ứng dụng phát triển mà không cần sự trợ giúp của quản trị cơ sở dữ liệu. Khi cần thiết, MongoDB có thể phối hợp và kiểm soát các thay đổi đối với cấu trúc của tài liệu bằng cách sử dụng xác thực schema.  
 
 MongoDB đã tạo ra định dạng Binary JSON (BSON) để hỗ trợ nhiều kiểu dữ liệu hơn so với JSON. Định dạng mới này cho phép phân tích dữ liệu nhanh hơn. Dữ liệu được lưu trữ trong BSON có thể được tìm kiếm và lập chỉ mục, tăng đáng kể hiệu suất. MongoDB hỗ trợ một loạt các phương pháp lập chỉ mục khác nhau, bao gồm văn bản, thập phân, địa điểm và phần tử.
 
 #### Trải nghiệm người dùng cho nhà phát triển
 
-MongoDB luôn dành nhiều thời gian và năng lượng để đảm bảo các nhà phát triển có trải nghiệm tuyệt vời. Các nhà phát triển đánh giá cao việc MongoDB đảm bảo cơ sở dữ liệu có thể được sử dụng từ nhiều ngôn ngữ lập trình khác nhau, bao gồm C, C# và .NET, C++, Go, Java, JavaScript, PHP, Python, Ruby, Rust, Scala và Swift. 
+MongoDB luôn dành nhiều thời gian và năng lượng để đảm bảo các nhà phát triển có trải nghiệm tuyệt vời. Các nhà phát triển đánh giá cao việc MongoDB đảm bảo cơ sở dữ liệu có thể được sử dụng từ nhiều ngôn ngữ lập trình khác nhau.
+
+Khi ngày càng nhiều người dùng doanh nghiệp tham gia cộng đồng MongoDB, các tính năng đã được bổ sung để hỗ trợ việc sử dụng và vận hành MongoDB. MongoDB hiện cũng cung cấp hỗ trợ khách hàng hạng nhất.
+
+Với MongoDB Atlas, việc sử dụng MongoDB dễ dàng hơn bao giờ hết. Bạn có thể khởi tạo cụm với vài cú nhấp chuột và bắt đầu viết mã ngay lập tức.  
+
+MongoDB Atlas cũng nhúng các khả năng mạnh mẽ như:  
+
+- Tìm kiếm toàn văn bản với MongoDB Atlas Search
+- Xây dựng ứng dụng di động và web với Atlas App Services  
+- Truy vấn và kết hợp dữ liệu từ nhiều nguồn với MongoDB Atlas Data Lake
+
+#### Khả năng mở rộng và giao dịch  
+
+Kiến trúc mở rộng theo chiều ngang của MongoDB có thể mở rộng để đáp ứng nhu cầu truy cập tăng đột biến khi kinh doanh phát triển.  
+
+Khi mô hình hóa dữ liệu trong MongoDB, việc cập nhật dữ liệu có thể đạt được trong một giao dịch duy nhất thay vì nhiều giao dịch như trong cơ sở dữ liệu quan hệ.
+
+#### Nền tảng và hệ sinh thái trưởng thành   
+
+Sau hơn 15 năm phát triển, MongoDB đã có cộng đồng lớn mạnh gồm các nhà phát triển và đơn vị tư vấn trên toàn thế giới. Điều này giúp người dùng dễ dàng được hỗ trợ khi cần.
+
+Nhìn chung, MongoDB cung cấp một nền tảng cơ sở dữ liệu linh hoạt với nhiều lợi ích cho các ứng dụng doanh nghiệp.
 
 ### Khi nào nên sử dụng MongoDB?
 
