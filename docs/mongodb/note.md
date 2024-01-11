@@ -12,7 +12,7 @@ Tham khảo bài viết sau: https://www.percona.com/blog/mongodb-converting-rep
 
 - Truy cập vào `node4`
   - Stop Mongoo: `systemctl stop mongod`
-  - Xóa thông tin replicaset trong file cấu hình: /etc/mongod,conf
+  - Xóa thông tin replicaset trong file cấu hình: /etc/mongod.conf
   ```
   ...
   #replication:
