@@ -1,4 +1,4 @@
-## Replica set về Standalone
+## Chuyển đổi mô hình Replica set về Standalone
 
 Ngữ cảnh: Tách 01 node trong cụm ra thành cluster replicaset khác phục vụ cho môi trường Dev/Test/Staging
 
