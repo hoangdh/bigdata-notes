@@ -3,6 +3,8 @@
 
 Trong ví dụ này, chúng ta có 2 cụm HBase với IP. Cụm nguồn: 10.10.10.10; cụm đich: 10.10.20.10
 
+- Nếu không sử dụng YARN: Thêm tùy chọn này `-Dmapreduce.framework.name=local` vào mỗi câu lệnh phía dưới.
+
 ## 1. Export dữ liệu
 
 Cú pháp:
