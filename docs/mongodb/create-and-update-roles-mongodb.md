@@ -61,7 +61,7 @@ Xem role hiện tại có những quyền gì:
 db.getRole('user1Access', {showPrivileges:true}).privileges
 ```
 
-Bổ sung quyền cho role `user1Access` thêm quyền xem và tạo index trên `coll1` và thao tác trên `coll2`
+Bổ sung quyền cho role `user1Access` thêm quyền xem và tạo index trên `coll1`, thêm quyền thao tác trên `coll2`
 
 ```javascript
 use db01
