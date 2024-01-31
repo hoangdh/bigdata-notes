@@ -130,6 +130,10 @@ cp /tmp/mysql-connector-java-*/mysql-connector-java-*.jar $HIVE_HOME/lib/
 		<name>javax.jdo.option.ConnectionPassword</name>
 		<value>Pa$$w0rdV3ry$trong</value>
 	</property>
+        <property>
+                <name>datanucleus.connectionPool.maxPoolSize</name>
+                <value>5</value>
+        </property>
 	<property>
  		<name>datanucleus.autoCreateSchema</name>
   		<value>false</value>
@@ -225,7 +229,7 @@ default
 
 ```
 mkdir $HIVE_HOME/log -p 
-nohup $HIVE_HOME/bin/hiveserver2 > $HIVE_HOME/log/hiveserver2.out 2> $HIVE_HOME/log/hiveserver2.log &
+nohup $HIVE_HOME/bin/hive --service hiveserver2 --hiveconf hive.root.logger=INFO,console > $HIVE_HOME/log/hiveserver2.out 2> $HIVE_HOME/log/hiveserver2.log &
 ```
 
 Kiểm tra và kết nối bằng beeline với port 10000 và GUI 10002
