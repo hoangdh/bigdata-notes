@@ -276,7 +276,7 @@ Khởi động lại `hiveserver2` trên các server
 pkill -f -9 hiveserver2
 
 mkdir $HIVE_HOME/log -p 
-nohup $HIVE_HOME/bin/hiveserver2 > $HIVE_HOME/log/hiveserver2.out 2> $HIVE_HOME/log/hiveserver2.log &
+nohup $HIVE_HOME/bin/hive --service hiveserver2 --hiveconf hive.root.logger=INFO,console > $HIVE_HOME/log/hiveserver2.out 2> $HIVE_HOME/log/hiveserver2.log &
 ```
 
 #### 4.4 Kiểm tra kết nối
