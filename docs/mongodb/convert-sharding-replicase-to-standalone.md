@@ -4,7 +4,7 @@ Ngữ cảnh: Tách 01 node trong cụm ra thành cluster replicaset khác phụ
 
 Tham khảo bài viết sau: https://www.percona.com/blog/mongodb-converting-replica-set-to-standalone/
 
-- Vào node Primary; xóa host cần tách. Trong ví dụ này, ta càn tách `node4`.
+- Vào node Primary; xóa host cần tách. Trong ví dụ này, ta cần tách `node4`.
 
 ```
  rs.remove("node4:27017")
@@ -19,7 +19,7 @@ Tham khảo bài viết sau: https://www.percona.com/blog/mongodb-converting-rep
     #replSetName: "rs0"
   ```
  - Start Mongo: `systemctl start mongod`
- - Vào shell, tạo 01 user admin tạm thời
+ - Vào shell, tạo 01 user admin tạm thời. (Có thể bỏ tính năng xác thực ở file cấu hình bên trên để bỏ qua bước này và sang ngay bước xóa thông tin replicaset)
  ```
  db.getSiblingDB("admin").createUser({user: "dba_system", "pwd": "sekret","roles" : [{ "db" : "admin", "role" : "__system" }]});
  ```
@@ -54,3 +54,5 @@ use admin
 ```
 
 - Khởi động lại Mongo:  `systemctl restart mongod`
+
+**Chú ý**: Ta có thể sử dụng Máy chủ này để dựng 1 replicaset mới bằng cách thêm cấu hình, thiết lập replicaset và thêm các member.
