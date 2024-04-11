@@ -185,6 +185,42 @@ hbase org.apache.hadoop.hbase.mapreduce.RowCounter -Dhbase.zookeeper.quorum=10.1
 
 Trong lúc chuyển dữ liệu từ HBase trên cụm Secure; lỗi `Error: Can't get Master Kerberos principal for use as renewer` xuất hiện. Lỗi này do thiếu file yarn-site.yml trong cấu hình của HBase ($HBASE_HOME/conf)
 
+Hoặc thêm các file với nội dung sau:
+
+> $HBASE_HOME/conf/yarn-site.xml 
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+ <property>
+    <name>yarn.resourcemanager.principal</name>
+    <value>yarn/_HOST@HADOOP.SECURE</value>
+  </property>
+</configuration>
+```
+
+**Chú ý**: Thay thế thông tin REALM
+
+> $HBASE_HOME/conf/mapred-site.xml
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+
+<configuration>
+ <property>
+    <name>mapreduce.framework.name</name>
+    <value>local</value>
+  </property>
+ <property>
+    <name>hadoop.tmp.dir</name>
+    <value>/data1/hadoop/tmp</value>
+ </property>
+</configuration>
+
+```
+- https://support.h2o.ai/support/solutions/articles/17000100343-error-can-t-get-master-kerberos-principal-for-use-as-renewer
+- https://stackoverflow.com/a/69068935
+
 ## 4. Tham khảo:
 - https://hbase.apache.org/book.html#tools
-- https://support.h2o.ai/support/solutions/articles/17000100343-error-can-t-get-master-kerberos-principal-for-use-as-renewer
