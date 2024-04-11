@@ -181,5 +181,10 @@ Cụm đích:
 hbase org.apache.hadoop.hbase.mapreduce.RowCounter -Dhbase.zookeeper.quorum=10.10.20.10:2181 -Dzookeeper.znode.parent=/hbase test_export
 ```
 
+## Lỗi 
+
+Trong lúc chuyển dữ liệu từ HBase trên cụm Secure; lỗi `Error: Can't get Master Kerberos principal for use as renewer` xuất hiện. Lỗi này do thiếu file yarn-site.yml trong cấu hình của HBase ($HBASE_HOME/conf)
+
 ## 4. Tham khảo:
 - https://hbase.apache.org/book.html#tools
+- https://support.h2o.ai/support/solutions/articles/17000100343-error-can-t-get-master-kerberos-principal-for-use-as-renewer
