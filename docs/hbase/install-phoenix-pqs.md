@@ -88,12 +88,15 @@ export PATH=$PHOENIX_HOME/bin:$PATH
 
 ```
 cd /opt/softs/phoenix
-sqlline.py zk1,zk2,zk3:2181 ../examples/WEB_STAT.sql ../examples/WEB_STAT.csv
+sqlline.py zk1,zk2,zk3:2181 examples/WEB_STAT.sql
+psql.py -t WEB_STAT  zk1,zk2,zk3:2181 examples/WEB_STAT.csv
 ```
 
 Thay thế ZK Quorum của bạn vào câu lệnh.
 
 - Truy vấn thử bảng vừa tạo
+
+> sqlline.py zk1,zk2,zk3:2181
 
 ```
 0: jdbc:phoenix:zk1,zk2,zk3:2181> !sql select * from WEB_STAT;
