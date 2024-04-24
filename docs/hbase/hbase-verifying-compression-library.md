@@ -1,5 +1,20 @@
 ## Kiểm tra các thư viện nén trong HBase
 
+### Cài đặt và khai báo thư viện
+
+> apt-get install libsnappy-dev
+
+Sửa file `hbase-env.sh`:
+
+```
+...
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/softs/hadoop/lib/native:/usr/lib/x86_64-linux-gnu
+export HBASE_LIBRARY_PATH=$HBASE_LIBRARY_PATH:/opt/softs/hadoop/lib/native:/usr/lib/x86_64-linux-gnu/
+export CLASSPATH=$CLASSPATH:$HBASE_LIBRARY_PATH
+```
+
+Sau đó restart lại toàn bộ HBase.
+
 ### Cách sử dụng
 
 ```sh
