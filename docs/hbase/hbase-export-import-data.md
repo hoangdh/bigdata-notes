@@ -183,6 +183,8 @@ hbase org.apache.hadoop.hbase.mapreduce.RowCounter -Dhbase.zookeeper.quorum=10.1
 
 ## Lỗi 
 
+### Lỗi #1
+
 Trong lúc chuyển dữ liệu từ HBase trên cụm Secure; lỗi `Error: Can't get Master Kerberos principal for use as renewer` xuất hiện. Lỗi này do thiếu file yarn-site.yml trong cấu hình của HBase ($HBASE_HOME/conf)
 
 Hoặc thêm các file với nội dung sau:
@@ -221,6 +223,28 @@ Hoặc thêm các file với nội dung sau:
 ```
 - https://support.h2o.ai/support/solutions/articles/17000100343-error-can-t-get-master-kerberos-principal-for-use-as-renewer
 - https://stackoverflow.com/a/69068935
+
+### Lỗi #2
+
+Trong quá trình CopyTable, Export, Import; khi sử dụng YARN báo `Container exited with a non-zero exit code 143`:
+
+Tăng kích thước Memory của MapReduce lên >= kích thước Region. Trong ví dụ: 15G:
+
+```
+-Dmapreduce.map.memory.mb=15360 \
+-Dmapreduce.reduce.memory.mb=15360 \
+-Dmapreduce.map.java.opts=-Xmx15g \
+```
+
+Giới hạn luồng của Job. Trong ví dụ chỉ chạy 2 luồng:
+
+```
+-Dmapreduce.job.running.map.limit=2 \
+-Dmapreduce.job.running.reduce.limit=2
+```
+- https://stackoverflow.com/a/31836814
+- https://docs.qubole.com/en/latest/troubleshooting-guide/ts-hadoop/hadoop-memory-issues.html#yarn-applicationmaster-exceeding-its-physical-memory-limit-error
+- https://www.edureka.co/community/31938/mapper-failed-because-following-container-applicationmaster 
 
 ## 4. Tham khảo:
 - https://hbase.apache.org/book.html#tools
