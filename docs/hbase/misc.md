@@ -14,7 +14,7 @@ alter 'test',  {NAME => 'cf', COMPRESSION => 'GZ', VERSIONS => 1 }
 alter 'test', {METADATA => {'SPLIT_POLICY' => 'org.apache.hadoop.hbase.regionserver.DisabledRegionSplitPolicy'}}
 ```
 
-#### Kích hoạt lại tính năng auto-spilt
+#### Kích hoạt lại tính năng auto-split
 
 ```
 alter 'test', METHOD => 'table_att_unset', NAME => 'SPLIT_POLICY'
