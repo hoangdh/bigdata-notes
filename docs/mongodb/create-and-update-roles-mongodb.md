@@ -40,7 +40,7 @@ use admin
 db.createUser({
   user: "user1",
   pwd: "pass1word@",
-  roles: [ { role: "user1Access", db: "crm_bizfly_vn_log" }] 
+  roles: [ { role: "user1Access", db: "db01" }] 
 })
 ```
 
