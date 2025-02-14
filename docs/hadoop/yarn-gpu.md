@@ -3,6 +3,7 @@
 ## 1. Cài đặt Driver của Nvidia
 
 Trên Ubuntu LTS: https://docs.nvidia.com/datacenter/tesla/tesla-installation-notes/index.html#ubuntu-lts
+Xem hướng dẫn ngắn gọn: https://gist.github.com/hoangdh/811a564f93637d6fd36bd64661e316ec
 
 ## 2. Cài đặt và cấu hình Hadoop YARN NodeManager
 
