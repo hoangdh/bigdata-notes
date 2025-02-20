@@ -39,7 +39,7 @@ Vài ghi chép sơ sài về các công nghệ trong Bigdata
 
 ```
 Lời quê chắp nhặt dông dài,
-Mua vui cũng được một trống canh./
+Mua vui cũng được một vài trống canh./
 ```
 
 Xin mượn 02 câu Kiều của cụ Nguyễn Du để nói về những ghi chép này! Vô cùng cảm ơn bạn đọc!
